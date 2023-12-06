@@ -13,8 +13,10 @@ let kEmail = "email key"
 
 let kIsLoggedIn = "kIsLoggedIn"
 
-
 struct Onboarding: View {
+    
+    let karlaTitle = Font.custom("Karla-Regular", size: 50)
+    
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
@@ -24,35 +26,47 @@ struct Onboarding: View {
     @State var formError = false
     
     var body: some View {
+        Image("Logo")
+            .scaleEffect(1.5)
+            .padding(.bottom, 30)
+            .padding(.top, 20)
+        
         NavigationView {
             ZStack {
-                Color(red:73/255, green: 94/255, blue: 84/255)
+                Color("PrimaryGreen")
+                .ignoresSafeArea()
                 
                 VStack {
-                    if formError == true {
-                        Text("Please fill in all form fields")
-                    }
                     
                     NavigationLink(destination: Home(), isActive: $isLoggedIn) {EmptyView()} //button changes the value of the bool State var, which in turn triggers the NavigationLink due to the trailing closure. But this ones remains hidden!
                     
+                    Text("Welcome to")
+                        .foregroundColor(Color("ApprovedWhite"))
+                        .font(karlaTitle)
+                        .padding(.top, -100)
+                    
+                    Text("Little Lemon")
+                        .foregroundColor(Color("PrimaryYellow"))
+                        .font(karlaTitle)
+                        .padding(.top, -70)
+                        .padding(.bottom, 50)
+                    
+                    Text("Please log in")
+                        .foregroundColor(Color("ApprovedWhite"))
+                        .font(.custom("Karla-Regular", size: 24))
+                    
                     TextField("First Name",
                               text: $firstName)
-                        .padding()
-                        .frame(width: 300, height: 40)
-                        .background(Color.white)
-                        .cornerRadius(20)
+                        .textFieldStyle(OnboardingTextFieldStyle())
+                        .padding(.bottom, 5)
                     TextField("Last Name",
                               text: $lastName)
-                        .padding()
-                        .frame(width: 300, height: 40)
-                        .background(Color.white)
-                        .cornerRadius(20)
+                        .textFieldStyle(OnboardingTextFieldStyle())
+                        .padding(.bottom, 5)
                     TextField("Email",
                               text: $email)
-                        .padding()
-                        .frame(width: 300, height: 40)
-                        .background(Color.white)
-                        .cornerRadius(20)
+                        .textFieldStyle(OnboardingTextFieldStyle())
+                        .padding(.bottom, 5)
                     
                     Button(action: {
                         if firstName.isEmpty || lastName.isEmpty || email.isEmpty {
@@ -68,11 +82,18 @@ struct Onboarding: View {
                         }
                     }, label: {
                         Text("Register")
+                            .foregroundStyle(Color("ApprovedBlack"))
+                            .font(.custom("Karla-Regular", size: 24))
                     })
-                    .padding()
-                    .frame(width: 200, height: 50)
-                    .background(Color.yellow)
-                    .cornerRadius(10)
+                    .buttonStyle(CallToActionButtonStyle())
+                    
+                    if formError == true {
+                        Text("Please fill in all form fields")
+                            .padding(.top, 10)
+                            .foregroundStyle(Color.red)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                    }
                 }
                 .onAppear {
                     if UserDefaults.standard.bool(forKey: kIsLoggedIn) == true {
@@ -81,9 +102,7 @@ struct Onboarding: View {
             }
             }
         }
-        .frame(width: 438, height: 600)
-        .border(Color.black)
-        
+        .frame(width: 438, height: 675)
     }
 }
 
