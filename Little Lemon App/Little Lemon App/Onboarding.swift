@@ -25,42 +25,65 @@ struct Onboarding: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                if formError == true {
-                    Text("Please fill in all form fields")
-                }
+            ZStack {
+                Color(red:73/255, green: 94/255, blue: 84/255)
                 
-                NavigationLink(destination: Home(), isActive: $isLoggedIn) {EmptyView()} //button changes the value of the bool State var, which in turn triggers the NavigationLink due to the trailing closure. But this ones remains hidden!
-                
-                TextField("First Name",
-                          text: $firstName)
-                TextField("Last Name",
-                          text: $lastName)
-                TextField("Email",
-                          text: $email)
-                
-                Button(action: {
-                    if firstName.isEmpty || lastName.isEmpty || email.isEmpty {
-                        formError.toggle()
-                    } else {
-                        UserDefaults.standard.set(firstName, forKey: kFirstName)
-                        UserDefaults.standard.set(lastName, forKey: kLastName)
-                        UserDefaults.standard.set(email, forKey: kEmail)
-                        UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-                        
-                        isLoggedIn = true
-                       
+                VStack {
+                    if formError == true {
+                        Text("Please fill in all form fields")
                     }
-                }, label: {
-                    Text("Register")
-                })
-            }
-            .onAppear {
-                if UserDefaults.standard.bool(forKey: kIsLoggedIn) == true {
-                    isLoggedIn = true
+                    
+                    NavigationLink(destination: Home(), isActive: $isLoggedIn) {EmptyView()} //button changes the value of the bool State var, which in turn triggers the NavigationLink due to the trailing closure. But this ones remains hidden!
+                    
+                    TextField("First Name",
+                              text: $firstName)
+                        .padding()
+                        .frame(width: 300, height: 40)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                    TextField("Last Name",
+                              text: $lastName)
+                        .padding()
+                        .frame(width: 300, height: 40)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                    TextField("Email",
+                              text: $email)
+                        .padding()
+                        .frame(width: 300, height: 40)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                    
+                    Button(action: {
+                        if firstName.isEmpty || lastName.isEmpty || email.isEmpty {
+                            formError.toggle()
+                        } else {
+                            UserDefaults.standard.set(firstName, forKey: kFirstName)
+                            UserDefaults.standard.set(lastName, forKey: kLastName)
+                            UserDefaults.standard.set(email, forKey: kEmail)
+                            UserDefaults.standard.set(true, forKey: kIsLoggedIn)
+                            
+                            isLoggedIn = true
+                           
+                        }
+                    }, label: {
+                        Text("Register")
+                    })
+                    .padding()
+                    .frame(width: 200, height: 50)
+                    .background(Color.yellow)
+                    .cornerRadius(10)
                 }
+                .onAppear {
+                    if UserDefaults.standard.bool(forKey: kIsLoggedIn) == true {
+                        isLoggedIn = true
+                    }
+            }
             }
         }
+        .frame(width: 438, height: 600)
+        .border(Color.black)
+        
     }
 }
 
