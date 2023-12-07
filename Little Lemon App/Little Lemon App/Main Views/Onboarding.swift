@@ -16,25 +16,19 @@ let kIsLoggedIn = "kIsLoggedIn"
 struct Onboarding: View {
     
     let karlaTitle = Font.custom("Karla-Regular", size: 50)
+    let markaziTitle = Font.custom("MarkaziText-Regular", size: 64)
     
     @State var firstName = ""
     @State var lastName = ""
     @State var email = ""
     
     @State var isLoggedIn = false
-    
     @State var formError = false
     
-    var body: some View {
-        Image("Logo")
-            .scaleEffect(1.5)
-            .padding(.bottom, 30)
-            .padding(.top, 20)
-        
+    var body: some View {        
         NavigationView {
             ZStack {
                 Color("PrimaryGreen")
-                .ignoresSafeArea()
                 
                 VStack {
                     
@@ -42,13 +36,13 @@ struct Onboarding: View {
                     
                     Text("Welcome to")
                         .foregroundColor(Color("ApprovedWhite"))
-                        .font(karlaTitle)
+                        .font(markaziTitle)
                         .padding(.top, -100)
                     
                     Text("Little Lemon")
                         .foregroundColor(Color("PrimaryYellow"))
-                        .font(karlaTitle)
-                        .padding(.top, -70)
+                        .font(markaziTitle)
+                        .padding(.top, -90)
                         .padding(.bottom, 50)
                     
                     Text("Please log in")
@@ -86,6 +80,7 @@ struct Onboarding: View {
                             .font(.custom("Karla-Regular", size: 24))
                     })
                     .buttonStyle(CallToActionButtonStyle())
+                    .padding(20)
                     
                     if formError == true {
                         Text("Please fill in all form fields")
@@ -102,7 +97,7 @@ struct Onboarding: View {
             }
             }
         }
-        .frame(width: 438, height: 675)
+        .frame(width: 438, height: 750)
     }
 }
 
