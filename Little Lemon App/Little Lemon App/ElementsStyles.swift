@@ -40,9 +40,9 @@ struct profileInfoStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.custom("Karla-Regular", size: 18))
-            .padding(.bottom, 30)
             .foregroundColor(Color("ApprovedBlack"))
-            .padding([.leading, .trailing], 40)
+            .padding([.leading, .trailing], 20)
+            .padding([.bottom, .top], 12)
             .background(Color("ApprovedWhite"))
             .cornerRadius(20)
             .overlay(

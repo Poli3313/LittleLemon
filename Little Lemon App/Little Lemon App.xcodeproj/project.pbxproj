@@ -30,6 +30,9 @@
 		5DC447E02B2216210080EBFC /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC447DF2B2216210080EBFC /* Karla-Bold.ttf */; };
 		5DC447E22B2216850080EBFC /* Karla-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC447E12B2216850080EBFC /* Karla-ExtraBold.ttf */; };
 		5DC447E42B2227A30080EBFC /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC447E32B2227A30080EBFC /* Karla-Regular.ttf */; };
+		5DC6974A2B23682B00ECDF9F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC697492B23682B00ECDF9F /* Order.swift */; };
+		5DC6974C2B236ABF00ECDF9F /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC6974B2B236ABF00ECDF9F /* Karla-Italic.ttf */; };
+		5DC6974E2B23767100ECDF9F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6974D2B23767100ECDF9F /* CartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		5DC447DF2B2216210080EBFC /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
 		5DC447E12B2216850080EBFC /* Karla-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraBold.ttf"; sourceTree = "<group>"; };
 		5DC447E32B2227A30080EBFC /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
+		5DC697492B23682B00ECDF9F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		5DC6974B2B236ABF00ECDF9F /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
+		5DC6974D2B23767100ECDF9F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +135,6 @@
 				5DC447CF2B20D90A0080EBFC /* Little-Lemon-App-Info.plist */,
 				5DC447892B1F27FC0080EBFC /* Little_Lemon_AppApp.swift */,
 				5DC447CD2B20D1430080EBFC /* ElementsStyles.swift */,
-				5DC447C02B1F8E370080EBFC /* UserProfile.swift */,
 				5DC447D62B20E52A0080EBFC /* Main Views */,
 				5DC447CB2B20872A0080EBFC /* DishDetailsView.swift */,
 				5DC447C22B2070D20080EBFC /* FetchedObjects.swift */,
@@ -137,6 +142,7 @@
 				5DC447922B1F27FE0080EBFC /* Persistence.swift */,
 				5DC447C42B20713C0080EBFC /* MenuList.swift */,
 				5DC447C62B2071420080EBFC /* MenuItem.swift */,
+				5DC6974B2B236ABF00ECDF9F /* Karla-Italic.ttf */,
 				5DC447DD2B2209470080EBFC /* MarkaziText-Regular.ttf */,
 				5DC447E32B2227A30080EBFC /* Karla-Regular.ttf */,
 				5DC447DF2B2216210080EBFC /* Karla-Bold.ttf */,
@@ -179,6 +185,9 @@
 				5DC447BA2B1F757F0080EBFC /* Onboarding.swift */,
 				5DC447BC2B1F7AC40080EBFC /* Home.swift */,
 				5DC447BE2B1F7AFA0080EBFC /* Menu.swift */,
+				5DC697492B23682B00ECDF9F /* Order.swift */,
+				5DC6974D2B23767100ECDF9F /* CartView.swift */,
+				5DC447C02B1F8E370080EBFC /* UserProfile.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 			files = (
 				5DC447DE2B2209470080EBFC /* MarkaziText-Regular.ttf in Resources */,
 				5DC447912B1F27FE0080EBFC /* Preview Assets.xcassets in Resources */,
+				5DC6974C2B236ABF00ECDF9F /* Karla-Italic.ttf in Resources */,
 				5DC447E02B2216210080EBFC /* Karla-Bold.ttf in Resources */,
 				5DC4478E2B1F27FE0080EBFC /* Assets.xcassets in Resources */,
 				5DC447E42B2227A30080EBFC /* Karla-Regular.ttf in Resources */,
@@ -318,12 +328,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC6974E2B23767100ECDF9F /* CartView.swift in Sources */,
 				5DC447CA2B20796C0080EBFC /* ExampleDatabase.xcdatamodeld in Sources */,
 				5DC447CC2B20872A0080EBFC /* DishDetailsView.swift in Sources */,
 				5DC447BF2B1F7AFA0080EBFC /* Menu.swift in Sources */,
 				5DC447932B1F27FE0080EBFC /* Persistence.swift in Sources */,
 				5DC447C12B1F8E370080EBFC /* UserProfile.swift in Sources */,
 				5DC447CE2B20D1430080EBFC /* ElementsStyles.swift in Sources */,
+				5DC6974A2B23682B00ECDF9F /* Order.swift in Sources */,
 				5DC447962B1F27FE0080EBFC /* Little_Lemon_App.xcdatamodeld in Sources */,
 				5DC447C32B2070D20080EBFC /* FetchedObjects.swift in Sources */,
 				5DC447BD2B1F7AC40080EBFC /* Home.swift in Sources */,

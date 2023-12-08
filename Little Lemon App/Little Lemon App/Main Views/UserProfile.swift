@@ -17,40 +17,51 @@ struct UserProfile: View {
     
     var body: some View {
         ZStack {
-            VStack {
+            Image("pattern")
+                .opacity(0.1)
+                .ignoresSafeArea()
+            
+            VStack (spacing: 30){
                 Image("Profile Picture Placeholder")
                     .scaleEffect(0.75)
+                    .padding(.top, 50)
+                    .overlay(
+                       Circle()
+                        .stroke(Color("PrimaryGreen"), lineWidth: 2)
+                        .scaleEffect(0.75)
+                        .padding(.top, 50)
+                    )
                 
                 Text("Personal Information")
                     .font(.custom("Karla-Bold", size: 33))
                     .foregroundStyle(Color("ApprovedBlack"))
+                    .padding()
                 
-                VStack (alignment: .leading) {
+                VStack (alignment: .leading){
                 
                     Text("First name")
                         .font(.custom("Karla-ExtraBold", size: 18))
                         .foregroundStyle(Color("PrimaryGreen"))
-                        .padding(.bottom, 5)
-                        .padding(.top, 15)
+                        .padding(.top, 30)
                     Text(firstName ?? "")
                         .modifier(profileInfoStyle())
                     
                     Text("Last name")
                         .font(.custom("Karla-ExtraBold", size: 18))
                         .foregroundStyle(Color("PrimaryGreen"))
-                        .padding(.bottom, 5)
+                        .padding(.top, 15)
                     Text(lastName ?? "")
                         .modifier(profileInfoStyle())
                     
                     Text("Email")
                         .font(.custom("Karla-ExtraBold", size: 18))
                         .foregroundStyle(Color("PrimaryGreen"))
-                        .padding(.bottom, 5)
+                        .padding(.top, 15)
                     Text(email ?? "")
                         .modifier(profileInfoStyle())
                 }
                 .frame(width : 200, height : 200)
-                .padding(.leading, -200)
+                .padding(.leading, -110)
                 
                 Button("Logout"){
                     UserDefaults.standard.set(false, forKey: kIsLoggedIn)
@@ -64,7 +75,6 @@ struct UserProfile: View {
                 Spacer()
             }
         }
-        .background(Image("pattern").opacity(0.1))
     }
 }
 
