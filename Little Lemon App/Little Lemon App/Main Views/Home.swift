@@ -16,8 +16,12 @@ struct Home: View {
             Menu()
                 .tabItem {Label ("Menu", systemImage : "list.dash")}
                 .environment(\.managedObjectContext, persistence.container.viewContext)
+                .onDisappear {
+                    PersistenceController.shared.clear()
+                }
             UserProfile()
                 .tabItem {Label ("Profile", systemImage : "square.and.pencil")}
+            
         }
         .navigationBarBackButtonHidden(true)
     }

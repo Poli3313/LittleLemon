@@ -83,7 +83,7 @@ struct Onboarding: View {
                     .padding(20)
                     
                     if formError == true {
-                        Text("Please fill in all form fields")
+                        Text("Please fill in all log-in fields")
                             .padding(.top, 10)
                             .foregroundStyle(Color.red)
                             .font(.title3)
